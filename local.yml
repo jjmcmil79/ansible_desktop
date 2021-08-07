@@ -59,15 +59,11 @@
       minute: "*/10"
       job: ansible-pull -o -U https://github.com/jjmcmil79/ansible_desktop.git
 
-  - name: Transfer and execute a script.
-    remote_user: joshua
-    sudo: yes
-    tasks:
-       name: Transfer the script
-       copy: 
-         src: files/scripts/dotfiles
-         dest: /home/joshua/dotfiles 
-         mode: 0777
+  - name: Transfer the script
+    copy: 
+      src: files/scripts/dotfiles
+      dest: /home/joshua/dotfiles 
+      mode: 0777
 
-       name: Execute the script
-       command: sh /home/joshua/dotfiles/install.sh
+  - name: Execute the script
+    command: sh /home/joshua/dotfiles/install.sh
