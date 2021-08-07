@@ -62,10 +62,10 @@
   - name: Transfer the script
     copy: 
       src: files/scripts/dotfiles
-      dest: /home/joshua/dotfiles 
+      dest: /home/joshua 
       owner: joshua
       group: joshua
       mode: 0777
 
   - name: Execute the script
-    command: sh /home/joshua/dotfiles/install.sh
+    command: sh /home/joshua/dotfiles/dotfiles-master/install.sh
